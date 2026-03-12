@@ -1,0 +1,135 @@
+@import './variables.scss';
+
+.services {
+  padding: 80px 0;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #202744;
+    margin-bottom: 16px;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.1rem;
+    color: #5f6b82;
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    padding: 28px 0;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &--reverse {
+      flex-direction: row-reverse;
+
+      @media (max-width: 992px) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__item-content,
+  &__item-image-wrap {
+    flex: 1;
+  }
+
+  &__item-content {
+    max-width: 560px;
+  }
+
+  &__item-title {
+    font-size: clamp(1.6rem, 2.3vw, 2.2rem);
+    color: #202744;
+    line-height: 1.25;
+    margin-bottom: 18px;
+  }
+
+  &__item-description {
+    font-size: 1rem;
+    color: #5a6477;
+    line-height: 1.85;
+    margin-bottom: 22px;
+
+    @media (max-width: 768px) {
+      font-size: 0.96rem;
+    }
+  }
+
+  &__item-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: $primary-color;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background: darken($primary-color, 8%);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__item-image-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item-image {
+    width: 100%;
+    max-width: 560px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 18px 44px rgba(32, 39, 68, 0.14);
+    border: 1px solid rgba(32, 39, 68, 0.08);
+
+    @media (max-width: 768px) {
+      height: 260px;
+    }
+  }
+}

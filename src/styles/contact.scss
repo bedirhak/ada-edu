@@ -1,0 +1,209 @@
+@import './variables.scss';
+
+.contact-page {
+  padding: 80px 0 0 0;
+  background: #f9f5f2;
+  min-height: calc(100vh - 200px);
+  
+  .contact-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: start;
+      
+      @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+    }
+
+    // Sol Taraf - İletişim Bilgileri
+    .contact-info-section {
+
+      .main-title {
+        font-family: 'Georgia', 'Cambria', serif;
+        font-size: 3rem;
+        font-weight: 400;
+        color: $primary-color;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+        
+        @media (max-width: 768px) {
+          font-size: 2.2rem;
+        }
+      }
+
+      .subtitle {
+        font-size: 0.95rem;
+        color: #333;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+
+      .description {
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 60px;
+      }
+
+      .contact-details {
+        .email-item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          color: #333;
+          text-decoration: none;
+          font-size: 0.9rem;
+          margin-bottom: 30px;
+          transition: color 0.3s ease;
+
+          svg {
+            flex-shrink: 0;
+          }
+
+          &:hover {
+            color: #666;
+          }
+        }
+
+        .social-icons {
+          display: flex;
+          gap: 12px;
+
+          .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background-color: #333;
+              transform: translateY(-2px);
+            }
+          }
+        }
+      }
+    }
+    
+    // Sağ Taraf - İletişim Formu
+    .contact-form-wrapper {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      border: none;
+      
+      .contact-form {
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+          margin-bottom: 20px;
+
+          @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .form-group {
+          margin-bottom: 20px;
+          
+          label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #666;
+            margin-bottom: 8px;
+          }
+          
+          input,
+          textarea {
+            width: 100%;
+            padding: 12px 0;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            border-radius: 0;
+            font-size: 0.9rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+            background: transparent;
+            
+            &:focus {
+              outline: none;
+              border-bottom-color: $primary-color;
+            }
+            
+            &::placeholder {
+              color: #999;
+            }
+          }
+          
+          textarea {
+            resize: vertical;
+            min-height: 100px;
+            line-height: 1.5;
+          }
+        }
+
+        .form-actions {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 30px;
+
+          .submit-btn {
+            padding: 12px 50px;
+            background: $primary-color;
+            color: white;
+            border: none;
+            border-radius: 0;
+            font-size: 0.9rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: capitalize;
+            
+            &:hover {
+              background: darken($primary-color, 8%);
+            }
+
+            &:active {
+              transform: scale(0.98);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact-map {
+  max-width: 100%;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 0;
+  height: 450px;
+  
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+}
